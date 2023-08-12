@@ -2,6 +2,7 @@
   "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\gcc.exe",
   "C_Cpp.errorSquiggles": "disabled",
   "files.associations": {
-    "string.h": "c"
+    "string.h": "c",
+    "lab01": "c"
   }
 }

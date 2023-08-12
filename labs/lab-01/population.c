@@ -9,16 +9,16 @@ void print(int x);
 
 int main(void)
 {
-    // TODO: Prompt for start size
+//  Prompt for start size
     int n = start_size();
 
-    // TODO: Prompt for end size
+// Prompt for end size
     int p = end_size(n);
 
-    // TODO: Calculate number of years until we reach threshold
+//  Calculate number of years until we reach threshold
     int t = threshold(n, p);
 
-    // TODO: Print number of years
+//  Print number of years
     print(t);
 }
 // function to get the population size from the user

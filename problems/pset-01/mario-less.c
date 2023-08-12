@@ -6,9 +6,9 @@ void pyramid(int x);
 
 int main(void)
 {
-    // TODO: Prompt for Height
+    // Prompt for Height
     int n = get_size();
-    // TODO: Make the pyramid
+    // Make the pyramid
     pyramid(n);
 }
 // Function to get the height of the pyramid

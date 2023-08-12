@@ -1,0 +1,21 @@
+sort1 uses: Bubble sort
+
+How do you know?:In the worst case scenario(O(n ** 2)), as the amount of numbers grew, the time to sort grew a lot,
+ in addition to being the slowest.
+Besides that, when the list was sorted, this algorithm was the fastest because the best case scenario
+it's O(n) n steps to execute the algorithm, faster than the other two options
+
+sort2 uses: Merge sort
+
+How do you know?: In the worst case scenario(O(log n)), it was the faster of all three to sort,
+even for higher amounts of numbers.
+But when the list was sorted, this algorithm wasn't the fastest and maintained the same time
+because the best case scenario doesn't change the time taken to execute the algorithm,
+will continue to be O(log n)
+
+sort3 uses: Selection sort
+
+How do you know?: In the worst case scenario(O(n ** 2)), as the amount of numbers grew, the time to sort grew a lot,
+but it wasn't the slowest.
+Besides that, when the list was sorted, this algorithm was the slowest because the best case scenario doesn't
+change the time taken to execute the algorithm, will continue to be O(n ** 2)
