@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            //  Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#feedback').innerHTML = 'Correct';
+                });
+
+                let incorrect = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].addEventListener('click', function() {
+                        incorrect[i].style.backgroundColor = 'red';
+                        document.querySelector('#feedback').innerHTML = 'Incorrect';
+                    });
+                }
+
+                document.querySelector('#check').addEventListener('click', function() {
+                    let answer = document.querySelector('input');
+                    if (answer.value.toLowerCase() === 'brown') {
+                        answer.style.backgroundColor = 'green';
+                        document.querySelector('#feedback2').innerHTML = 'Correct';
+                    }
+                    else {
+                        answer.style.backgroundColor = 'red';
+                        document.querySelector('#feedback2').innerHTML = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>
+                    What was the first soft drink in space?
+                </h3>
+                <button class="incorrect">Fanta</button>
+                <button class="correct">Coca Cola</button>
+                <button class="incorrect">Pepsi</button>
+                <button class="incorrect">Guaraná</button>
+                <button class="incorrect">Sprite</button>
+
+                <p id="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>
+                    What is the rarest M&M color?
+                </h3>
+                <input type="text">
+                <button id="check">Check Answer</button>
+
+                <p id="feedback2"></p>
+            </div>
+        </div>
+    </body>
+</html>

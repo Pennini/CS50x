@@ -1,0 +1,13 @@
+SELECT title FROM movies WHERE year = 2008;
+SELECT birth FROM people WHERE name = "Emma Stone";
+SELECT title FROM movies WHERE year >= 2018 ORDER BY title;
+SELECT COUNT(*) FROM ratings WHERE rating = 10.0;
+SELECT title, year FROM movies WHERE title LIKE "Harry Potter%" ORDER BY year;
+SELECT AVG(rating) FROM ratings WHERE movie_id IN (SELECT id FROM movies WHERE year = 2012);
+SELECT title, rating FROM movies JOIN ratings ON movies.id = ratings.movie_id WHERE year = 2010 ORDER BY rating DESC, title ASC;
+SELECT name FROM people WHERE id IN (SELECT person_id FROM stars WHERE movie_id IN (SELECT movie_id FROM stars WHERE person_id IN (SELECT id FROM people WHERE name = "Kevin Bacon" AND birth = 1958)) AND person_id != (SELECT id FROM people WHERE name = "Kevin Bacon" AND birth = 1958));
+SELECT title FROM movies WHERE id IN (SELECT movie_id FROM ratings WHERE movie_id IN (SELECT movie_id FROM stars JOIN people ON stars.person_id = people.id WHERE name = "Chadwick Boseman") ORDER BY rating DESC) LIMIT 5;
+SELECT name FROM people WHERE id IN (SELECT person_id FROM directors WHERE movie_id IN (SELECT movie_id FROM ratings WHERE rating >= 9.0));
+SELECT title FROM movies WHERE id IN (SELECT movie_id FROM ratings WHERE movie_id IN (SELECT movie_id FROM stars JOIN people ON stars.person_id = people.id WHERE name = "Chadwick Boseman") ORDER BY rating DESC) LIMIT 5;
+SELECT title FROM movies WHERE id IN (SELECT s1.movie_id FROM stars AS s1 INNER JOIN people AS p1 ON s1.person_id = p1.id INNER JOIN stars AS s2 ON s1.movie_id = s2.movie_id INNER JOIN people AS p2 ON s2.person_id = p2.id WHERE p1.name = "Bradley Cooper" AND p2.name = "Jennifer Lawrence");
+SELECT name FROM people WHERE id IN (SELECT person_id FROM stars WHERE movie_id IN (SELECT movie_id FROM stars WHERE person_id IN (SELECT id FROM people WHERE name = "Kevin Bacon" AND birth = 1958)) AND person_id != (SELECT id FROM people WHERE name = "Kevin Bacon" AND birth = 1958));
