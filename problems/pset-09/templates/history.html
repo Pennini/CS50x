@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table" style="float:left;">
+        <col>
+        <colgroup span="2"></colgroup>
+        <colgroup span="2"></colgroup>
+        <tr>
+            <th colspan="2" scope="colgroup">Bought</th>
+        </tr>
+        <tr>
+            <th scope="col">Stock</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Time</th>
+        </tr>
+            {% for stock in buy %}
+                <tr>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ stock["buy_price"] | usd }}</td>
+                <td>{{ stock["year"] }}-{{ stock["month"] }}-{{ stock["day"] }} {{ stock["hour"] }}:{{ stock["minute"] }}:{{ stock["seconds"] }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+    <table class="table" style="float:left;">
+        <col>
+        <colgroup span="2"></colgroup>
+        <colgroup span="2"></colgroup>
+        <tr>
+            <th colspan="2" scope="colgroup">Sold</th>
+        </tr>
+        <tr>
+            <th scope="col">Stock</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Time</th>
+        </tr>
+
+        {% for stock in sell %}
+            <tr>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ stock["sell_price"] | usd }}</td>
+                <td>{{ stock["year"] }}-{{ stock["month"] }}-{{ stock["day"] }} {{ stock["hour"] }}:{{ stock["minute"] }}:{{ stock["seconds"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
