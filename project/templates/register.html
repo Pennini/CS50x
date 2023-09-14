@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block link %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form class="row g-3" action="/register" name="registration" method="POST">
+        <div class="col-md-6">
+        <label for="inputUsername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="inputUsername" placeholder="Username" name="username">
+        </div>
+        <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="user@example.com" name="email">
+        </div>
+        <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" name="password">
+        </div>
+        <div class="col-6">
+        <label for="inputConfirmationPassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="inputConfirmationPassword" name="confirmation">
+        </div>
+        <div class="col-12">
+        <label for="inputFullname" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="inputFullname" placeholder="Full Name" name="fullname">
+        </div>
+        <div class="col-md-3">
+        <label for="inputBirthdate" class="form-label">Birhtdate</label>
+        <input type="date" class="form-control" id="inputBirthdate" name="birthdate">
+        </div>
+        <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </form>
+{% endblock %}

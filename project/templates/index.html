@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Click the envelope
+{% endblock %}
+
+{% block main %}
+<div class="contain">
+    <h1 id="title">Click for some Inspiration</h1>
+    <div class="vl"></div>
+    <img id="envelope" alt="close envelope" src="./static/envelope_fechado.png" style="cursor:pointer;" onclick="changeImage()">
+    <button id="voice" class="btn btn-primary" type="submit" name="voice" value="voice" style="visibility:hidden;">Sound</button>
+</div>
+<script>
+    let botao = document.getElementById('voice');
+    function changeImage(){
+        let display = document.getElementById('envelope');
+        if (display.src.match('./static/envelope_fechado.png')) {
+            fetch('/change_image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ action: 'open' })
+            })
+            .then(response => response.json())
+            .then(data => {
+                display.src = data.new_image;
+                botao.style.visibility = 'visible';
+            })
+            .then(data => {
+                document.getElementById("title").innerHTML = "Your inspiration for today";
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        } else {
+            fetch('/change_image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ action: 'close' })
+            })
+            .then(response => response.json())
+            .then(data => {
+                display.src = data.new_image;
+                botao.style.visibility = 'hidden';
+            })
+            .then(data => {
+                document.getElementById("title").innerHTML = "Click for some Inspiration";
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('#voice').addEventListener('click', function() {
+                    fetch('/speak', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                });
+            });
+</script>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block link %}
+    <link href="/static/styles2.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block script %}
+    <script>
+        // Defina a variável phrases com os dados do back-end
+        const phrases = [
+            {% for ph in phrases %}
+                {
+                    date: "{{ ph.date }}",
+                    phrase: "{{ ph.phrase }}",
+                    author: "{{ ph.author }}"
+                },
+            {% endfor %}
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const search = document.querySelector("#search");
+            const inputBox = document.querySelector("#inputBox");
+            const tableBody = document.querySelector("tbody");
+
+            inputBox.onkeyup = (e) => {
+                let userData = e.target.value.toLowerCase();
+                let filteredData = phrases.filter((data) => {
+                    return (
+                        data.phrase.toLowerCase().includes(userData) ||
+                        data.author.toLowerCase().includes(userData) ||
+                        data.date.toLowerCase().includes(userData)
+                    );
+                });
+
+                // Limpe a tabela antes de adicionar os dados filtrados
+                tableBody.innerHTML = '';
+
+                filteredData.forEach((data) => {
+                    // Crie uma nova linha na tabela para cada resultado filtrado
+                    let row = tableBody.insertRow();
+                    let dateCell = row.insertCell(0);
+                    let phraseCell = row.insertCell(1);
+                    let authorCell = row.insertCell(2);
+
+                    dateCell.innerText = data.date;
+                    phraseCell.innerText = data.phrase;
+                    authorCell.innerText = data.author;
+                });
+            }
+        });
+    </script>
+{% endblock %}
+
+
+{% block ul %}
+    <ul class="navbar-nav me-auto mt-2">
+        <div class="input-group input-group-lg" id="search">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
+            <input id="inputBox" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        </div>
+    </ul>
+{% endblock %}
+
+{% block main %}
+    <div class="header">
+        <h1>Phrases that you seen</h1>
+    </div>
+    <div class="container">
+        <div class="section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Phrase</th>
+                        <th>Author</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ph in phrases %}
+                        <tr>
+                            <td>{{ ph.date|safe }}</td>
+                            <td>{{ ph.phrase|safe }}</td>
+                            <td>{{ ph.author|safe }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

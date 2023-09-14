@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block link %}
+    <link href="/static/styles2.css" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    Add phrase
+{% endblock %}
+
+{% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const inputBox = document.querySelector("#inputBox");
+        const tableRows = document.querySelectorAll("tbody tr");
+
+        inputBox.onkeyup = (e) => {
+            let userData = e.target.value.toLowerCase();
+
+            tableRows.forEach((row) => {
+                const phraseCell = row.querySelector("[name='phrase']").textContent.toLowerCase();
+                const authorCell = row.querySelector("[name='author']").textContent.toLowerCase();
+                const dateCell = row.querySelector("[name='date']").textContent.toLowerCase();
+
+                const isVisible =
+                    phraseCell.includes(userData) ||
+                    authorCell.includes(userData) ||
+                    dateCell.includes(userData);
+
+                row.dataset.visible = isVisible;
+            });
+        }
+    });
+</script>
+{% endblock %}
+
+
+{% block ul %}
+    <ul class="navbar-nav me-auto mt-2">
+        <div class="input-group input-group-lg" id="search">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
+            <input id="inputBox" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        </div>
+    </ul>
+{% endblock %}
+
+{% block main %}
+<div class="header">
+    <h1>Be part of your motivation</h1>
+</div>
+<div class="container">
+    <div class="section">
+
+        <h2>Add a phrase</h2>
+        <form action="/add" method="POST">
+            <div class="mb-3" id="add">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="phrase" name="phrase" placeholder="Phrase" type="text" size="90">
+            </div>
+            <div class="mb-3" id="add">
+                <input class="form-control mx-auto w-auto" id="author" name="author" placeholder="Author" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Add Phrase</button>
+        </form>
+    </div>
+    <div class="section">
+        <h2>Your phrases</h2>
+        {% if phrases %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Phrase</th>
+                        <th>Author</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ph in phrases %}
+                        <tr data-visible="true">
+                            <td name="date">{{ ph.date|safe }}</td>
+                            <td name="phrase">{{ ph.phrase|safe }}</td>
+                            <td name="author">{{ ph.author|safe }}</td>
+                            <td>
+                                <form action="/remove" method="POST">
+                                    <div>
+                                        <input type="hidden" name="phrase_id" value="{{ ph.id }}">
+                                    </div>
+                                    <button class="btn btn-primary" type="submit" name="remove" value="{{ ph.id }}">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

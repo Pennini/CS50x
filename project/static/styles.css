@@ -1,0 +1,74 @@
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+select {
+    text-align: center;
+    max-width: 17%;
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type="date"]{
+    background-color: #0080ff;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+form[name="registration"] {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+h1 {
+    padding-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 0;
+}
+.contain {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+#envelope {
+    height: 35%;
+    width: 35%;
+}
+
+#voice {
+    text-align: center; /* Centraliza o botão horizontalmente */
+    margin-left: 40px; /* Aumente o espaçamento entre a imagem e o botão */
+}
+
+.vl {
+    margin-left: 40px;
+    margin-right: 40px;
+    border-left: 2px solid blue;
+    height: 200px;
+  }
