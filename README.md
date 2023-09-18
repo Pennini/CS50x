@@ -100,7 +100,7 @@ https://github.com/Pennini/Pennini/assets/135245057/b96f6af2-a92b-40ea-ae03-768d
 
 ## The database
 
-I divided the database in 4 tables
+I divided the database into 4 tables
 
 <img width="434" alt="Captura de tela 2023-09-18 105305" src="https://github.com/Pennini/Pennini/assets/135245057/8c11c3a7-3801-45db-a0d4-9c7ec6290b42">
 
