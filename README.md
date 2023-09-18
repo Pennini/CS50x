@@ -19,7 +19,6 @@
 3. Start a virtual environment
 
    ```
-   > mkdir project
    > cd project
    > py -3 -m venv .venv
    >.venv\Scripts\activate
