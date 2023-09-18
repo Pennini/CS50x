@@ -50,13 +50,13 @@
 
 To start the application, run the following command within your virtual environment:
 
-    ```
-    python3 -m flask run
-    ```
+   ```
+   python3 -m flask run
+   ```
 
 ## Usage
 
-#### Login Page
+### Login Page
 
 <br>
 
@@ -64,18 +64,19 @@ To start the application, run the following command within your virtual environm
 
 <hr>
 
-#### Register Page
+### Register Page
 
 <img width="960" alt="Register Page" src="https://github.com/Pennini/Pennini/assets/135245057/88206983-d362-44cd-b56f-027e7dca19cc">
 
 <hr>
 
-#### Homepage
+### Homepage
 
 <br>
 
 <img width="960" alt="Homepage" src="https://github.com/Pennini/Pennini/assets/135245057/4ad14191-0bc2-4fc8-8376-0ff0115bec06">
 
+<br>
 <br>
 <br>
 
@@ -85,6 +86,7 @@ To start the application, run the following command within your virtual environm
     
 <br>
 <br>
+<br>
 
 - Click the button to listen to the phrase.
 
@@ -92,12 +94,13 @@ https://github.com/Pennini/Pennini/assets/135245057/43a08c8f-9f6b-44ae-b1ac-ef9c
 
 <hr>
 
-#### Add a phrase
+### Add a phrase
 
 <br>
 
 <img width="960" alt="Add a phrase Page" src="https://github.com/Pennini/Pennini/assets/135245057/e5b70607-5896-4bc7-bb47-78d5d3b0783d">
 
+<br>
 <br>
 <br>
 
@@ -109,7 +112,7 @@ https://github.com/Pennini/Pennini/assets/135245057/b96f6af2-a92b-40ea-ae03-768d
 
 <hr>
 
-#### History
+### History
 
 <br>
 
@@ -117,6 +120,7 @@ https://github.com/Pennini/Pennini/assets/135245057/b96f6af2-a92b-40ea-ae03-768d
 
 <img width="960" alt="Captura de tela 2023-09-18 104812" src="https://github.com/Pennini/Pennini/assets/135245057/9c4e15d3-9f47-4d3b-a720-03741bdbb855">
 
+<br>
 <br>
 <br>
 
