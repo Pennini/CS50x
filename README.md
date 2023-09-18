@@ -13,7 +13,10 @@
 
 1. Clone the project folder to your local machine:
 
-2. Start a virtual environment
+   <img width="83" alt="project folder" src="https://github.com/Pennini/CS50x/assets/135245057/71ae125b-d1ec-4aa3-85d3-3f020cc2e232">
+
+
+3. Start a virtual environment
 
    ```
    > mkdir project
@@ -22,7 +25,7 @@
    >.venv\Scripts\activate
    ```
 
-3. Install flask and flask_session
+4. Install flask and flask_session
 
    ```
    pip install Flask
@@ -32,13 +35,13 @@
    pip install Flask_Session
    ```
 
-4. Install pyttsx3
+5. Install pyttsx3
 
    ```
    pip install pyttsx3
    ```
 
-5. Install pillow
+6. Install pillow
 
    ```
    pip install Pillow
