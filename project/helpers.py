@@ -57,7 +57,7 @@ def write_envelope(phrase, author):
     # Texto parcial
     phrase_partial = ""
 
-    # # Função para calcular a largura do texto em pixels
+    # Função para calcular a largura do texto em pixels
     def text_width(text, font):
         return draw.textsize(text, font=font)[0]
 
