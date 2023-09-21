@@ -1,6 +1,8 @@
 # InspireVerse - Daily Motivation Phrases Website
 
 <i>InspireVerse</i> is a web application that provides users with daily motivational phrases to inspire and uplift them. This README will guide you through setting up, using, and understanding the project.
+<br>
+Video with explanation: <a href="https://youtu.be/K-qaekBiT8Y" target="_blank">InspireVerse</a>
 
 ## Getting Started
 
