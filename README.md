@@ -153,13 +153,23 @@ The database is divided into four tables:
 <br>
 <br>
 
-- <strong>user_phrases:</strong>Keeps track of user-added phrases. The status of a phrase changes when removed.
+- <strong>user_phrases:</strong> Keeps track of user-added phrases. The status of a phrase changes when removed.
 
 <img width="118" alt="user_phrases" src="https://github.com/Pennini/Pennini/assets/135245057/0db99e71-8f69-4721-bcd1-6f1eda263314">
 
 <br>
 <br>
 
-- <strong>history:</strong>Records all phrases that appeared in the user's envelope and associates them with the respective phrase ID from either the "phrases" or "user_phrases" table.
+- <strong>history:</strong> Records all phrases that appeared in the user's envelope and associates them with the respective phrase ID from either the "phrases" or "user_phrases" table.
 
 <img width="123" alt="history" src="https://github.com/Pennini/Pennini/assets/135245057/767f7d5c-6b11-443a-a598-5170fe099957">
+
+## Files and Directories
+
+- <strong>static:</strong> This directory contains all the static resources used in the web application, such as images, fonts, and style sheets. These resources are used to enhance the visual elements of the site.
+
+- <strong>templates:</strong> The "templates" directory houses all the HTML templates used to structure the web pages in the application. HTML templates are essential for creating the user interface and rendering dynamic content.
+
+- <strong>app:</strong> This is the main Python file that serves as the core of the web application. It contains the code that defines the routes, views, and overall functionality of the site. This is where handles user requests and responses.
+
+- <strong>helpers:</strong> It is a separate Python file that contains functions that assist in the functionality of the web application. These functions provide support for various features implemented in "app.py."
